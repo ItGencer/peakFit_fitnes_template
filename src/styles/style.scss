@@ -1,0 +1,291 @@
+// ─── Підключення шрифтів через SCSS (альтернатива <link> у HTML) ───
+// Якщо шрифти підключені у HTML — цей рядок не потрібен
+// @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600&display=swap');
+
+// ─── CSS-змінні для тем ───────────────────────────────────────────
+:root {
+  // Світла тема (основна)
+  --bg-primary:    #f5f0e8;   // бежевий фон
+  --bg-header:     #f5f0e8;   // фон хедера
+  --text-primary:  #2a2418;   // темний текст
+  --text-nav:      #5a4e3a;   // колір посилань навігації
+  --accent:        #8a7340;   // золотий акцент
+  --accent-hover:  #6b5a2e;   // акцент при hover
+  --border-color:  rgba(138, 115, 64, 0.3);
+  --btn-lang-bg:   transparent;
+  --btn-lang-active-bg: var(--accent);
+  --btn-lang-active-color: #fff;
+
+  // Шрифти
+  --font-heading:  'Oswald', sans-serif;
+  --font-body:     'Barlow Condensed', sans-serif;
+}
+
+// Темна тема
+[data-theme="dark"] {
+  --bg-primary:    #1a1c14;
+  --bg-header:     #1a1c14;
+  --text-primary:  #e8dfc8;
+  --text-nav:      #c8b98a;
+  --accent:        #c8a84b;
+  --accent-hover:  #e0bf60;
+  --border-color:  rgba(200, 168, 75, 0.3);
+}
+
+// ─── Скидання базових стилів ──────────────────────────────────────
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// ─── HEADER ───────────────────────────────────────────────────────
+.header {
+  position: fixed;          // фіксована до верху
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+
+  // Внутрішній контейнер — flexbox для розташування елементів в ряд
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  // Логотип
+  &__logo {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    flex-shrink: 0;           // логотип не стискається
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  // Навігаційний список
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+  }
+
+  &__nav-link {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-nav);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+
+    // Підкреслення при hover — псевдоелемент
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    &:hover {
+      color: var(--accent);
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  // Панель: мова + тема + бургер
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  // Блок перемикача мови
+  &__lang {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__lang-btn {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 5px 10px;
+    border: none;
+    background: var(--btn-lang-bg);
+    color: var(--text-nav);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    // Активна мова — золотий фон
+    &.active {
+      background-color: var(--accent);
+      color: #fff;
+    }
+
+    &:hover:not(.active) {
+      color: var(--accent);
+    }
+  }
+
+  // Кнопка теми
+  &__theme-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: var(--accent);
+    }
+  }
+
+  // Бургер-меню (тільки мобільний)
+  &__burger {
+    display: none;           // приховано на десктопі
+    flex-direction: column;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    // Анімація в хрестик коли меню відкрите
+    &.open {
+      span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+  }
+}
+
+// ─── Адаптив для мобільних ────────────────────────────────────────
+@media (max-width: 768px) {
+  .header {
+    &__nav {
+      // Навігація прихована — випадає зверху при відкритті
+      position: fixed;
+      top: 64px;
+      left: 0;
+      width: 100%;
+      background-color: var(--bg-header);
+      border-bottom: 1px solid var(--border-color);
+      padding: 24px;
+      transform: translateY(-100%);   // прихована вгорі
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      // Клас .open додається через JS
+      &.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &__nav-list {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__nav-link {
+      font-size: 16px;
+    }
+
+    &__burger {
+      display: flex;   // показуємо бургер на мобільному
+    }
+  }
+}
+
+// ─── Відступ щоб контент не ховався під фіксованим хедером ───────
+body {
+  padding-top: 64px;
+}
+
+// ─── Адаптив 320px ────────────────────────────────────────────────
+@media (max-width: 360px) {
+  .header {
+    &__container {
+      padding: 0 12px;   // менший відступ по боках
+      gap: 8px;          // менший gap між елементами
+    }
+
+    &__logo {
+      font-size: 18px;   // трохи менший логотип
+    }
+
+    &__lang-btn {
+      padding: 5px 6px;  // менший padding у кнопках UA/EN
+      font-size: 11px;
+    }
+
+    &__theme-btn,
+    &__burger {
+      width: 32px;       // менший розмір кнопок
+      height: 32px;
+    }
+  }
+}

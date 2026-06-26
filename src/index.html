@@ -1,11 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- src/index.html — додай у <head> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <title>PeakFit Fitnes</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header class="header" id="header">
+    <div class="header__container">
+
+      <!-- Логотип -->
+      <a href="#top" class="header__logo">PeakFit</a>
+
+      <!-- Навігація -->
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="#services"  class="header__nav-link" data-i18n="nav.services">ПОСЛУГИ</a></li>
+          <li><a href="#trainers"  class="header__nav-link" data-i18n="nav.trainers">ТРЕНЕРИ</a></li>
+          <li><a href="#pricing"   class="header__nav-link" data-i18n="nav.pricing">ЦІНИ</a></li>
+          <li><a href="#reviews"   class="header__nav-link" data-i18n="nav.reviews">ВІДГУКИ</a></li>
+          <li><a href="#contact"   class="header__nav-link" data-i18n="nav.contact">КОНТАКТИ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Панель управління -->
+      <div class="header__controls">
+
+        <!-- Перемикач мови -->
+        <div class="header__lang">
+          <button class="header__lang-btn active" id="btn-ua" data-lang="ua">
+            🇺🇦 UA
+          </button>
+          <button class="header__lang-btn" id="btn-en" data-lang="en">
+            🇬🇧 EN
+          </button>
+        </div>
+
+        <!-- Перемикач теми -->
+        <button class="header__theme-btn" id="theme-toggle" aria-label="Toggle theme">
+          🌙
+        </button>
+
+        <!-- Бургер (мобільний) -->
+        <button class="header__burger" id="burger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+  </body>
+  <main>
+
+  </main>
+  <footer>
     
-</body>
+  </footer>
+  </body>
+  </body>
 </html>
