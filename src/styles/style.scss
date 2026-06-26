@@ -15,6 +15,7 @@
   --btn-lang-bg:   transparent;
   --btn-lang-active-bg: var(--accent);
   --btn-lang-active-color: #fff;
+  --bg-footer:  #ddd6c5;
 
   // Шрифти
   --font-heading:  'Oswald', sans-serif;
@@ -30,6 +31,7 @@
   --accent:        #c8a84b;
   --accent-hover:  #e0bf60;
   --border-color:  rgba(200, 168, 75, 0.3);
+  --bg-footer:  #161608;
 }
 
 // ─── Скидання базових стилів ──────────────────────────────────────
@@ -287,5 +289,140 @@ body {
       width: 32px;       // менший розмір кнопок
       height: 32px;
     }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FOOOTER styles
+
+.footer {
+  background-color: var(--bg-footer);
+  padding: 48px 40px 0;
+
+  // ── Верхня частина: лого / навігація / соцмережі ──
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-bottom: 40px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  // ── Бренд ──
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 160px;
+  }
+
+  &__logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  &__slogan {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  // ── Навігація ──
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+  }
+
+  &__link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  // ── Соцмережі ──
+  &__socials {
+    display: flex;
+    gap: 10px;
+    min-width: 160px;
+    justify-content: flex-end;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+  }
+
+  // ── Копірайт ──
+  &__bottom {
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  &__copy {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
   }
 }
