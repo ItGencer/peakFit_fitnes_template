@@ -1,11 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- src/index.html — додай у <head> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <title>PeakFit Fitnes</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header class="header" id="header">
+    <div class="header__container">
+
+      <!-- Логотип -->
+      <a href="#top" class="header__logo">PeakFit</a>
+
+      <!-- Навігація -->
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="#services"  class="header__nav-link" data-i18n="nav.services">ПОСЛУГИ</a></li>
+          <li><a href="#trainers"  class="header__nav-link" data-i18n="nav.trainers">ТРЕНЕРИ</a></li>
+          <li><a href="#pricing"   class="header__nav-link" data-i18n="nav.pricing">ЦІНИ</a></li>
+          <li><a href="#reviews"   class="header__nav-link" data-i18n="nav.reviews">ВІДГУКИ</a></li>
+          <li><a href="#contact"   class="header__nav-link" data-i18n="nav.contact">КОНТАКТИ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Панель управління -->
+      <div class="header__controls">
+
+        <!-- Перемикач мови -->
+        <div class="header__lang">
+          <button class="header__lang-btn active" id="btn-ua" data-lang="ua">
+            🇺🇦 UA
+          </button>
+          <button class="header__lang-btn" id="btn-en" data-lang="en">
+            🇬🇧 EN
+          </button>
+        </div>
+
+        <!-- Перемикач теми -->
+        <button class="header__theme-btn" id="theme-toggle" aria-label="Toggle theme">
+          🌙
+        </button>
+
+        <!-- Бургер (мобільний) -->
+        <button class="header__burger" id="burger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+  </body>
+  <main>
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="hero">
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content">
+    <h1 class="hero__title">
+      <span data-i18n="hero.title.line1">ДИСЦИПЛІНА ТВОРИТЬ</span><br>
+      <span data-i18n="hero.title.line2">ЧЕМПІОНІВ</span>
+    </h1>
+
+    <!-- Лінія: анімується при hover на .hero__title -->
+    <div class="hero__divider"></div>
+
+    <p class="hero__subtitle">
+      <span data-i18n="hero.subtitle.1">Персональні тренування</span>
+      <span class="hero__dot" aria-hidden="true">·</span>
+      <span data-i18n="hero.subtitle.2">Силові програми</span>
+      <span class="hero__dot" aria-hidden="true">·</span>
+      <span data-i18n="hero.subtitle.3">Результат</span>
+    </p>
+
+    <div class="hero__buttons">
+      <a href="#contacts" class="hero__btn hero__btn--primary" data-i18n="hero.btn.signup">ЗАПИСАТИСЬ</a>
+      <a href="#services" class="hero__btn hero__btn--outline" data-i18n="hero.btn.more">ДІЗНАТИСЬ БІЛЬШЕ</a>
+    </div>
+  </div>
+
+  <!-- Статистика: текстові дані, атрибут data-stat для майбутнього Firebase -->
+  <div class="hero__stats">
+    <div class="hero__stat">
+      <span class="hero__stat-number" data-stat="clients">500+</span>
+      <span class="hero__stat-label" data-i18n="hero.stats.clients">КЛІЄНТІВ</span>
+    </div>
+    <div class="hero__stat">
+      <span class="hero__stat-number" data-stat="experience">8</span>
+      <span class="hero__stat-label" data-i18n="hero.stats.experience">РОКІВ ДОСВІДУ</span>
+    </div>
+    <div class="hero__stat">
+      <span class="hero__stat-number" data-stat="trainers">12</span>
+      <span class="hero__stat-label" data-i18n="hero.stats.trainers">ТРЕНЕРІВ</span>
+    </div>
+  </div>
+</section>
+  </main>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <a class="footer__logo" href="#">PEAKFIT</a>
+        <p class="footer__slogan" data-i18n="footer.slogan">Strength. Discipline. Results.</p>
+      </div>
+
+      <nav class="footer__nav">
+        <a class="footer__link" href="#services" data-i18n="nav.services">SERVICES</a>
+        <a class="footer__link" href="#trainers" data-i18n="nav.trainers">TRAINERS</a>
+        <a class="footer__link" href="#pricing" data-i18n="nav.pricing">PRICING</a>
+        <a class="footer__link" href="#reviews" data-i18n="nav.reviews">REVIEWS</a>
+        <a class="footer__link" href="#contact" data-i18n="nav.contact">CONTACT</a>
+      </nav>
+
+      <div class="footer__socials">
+        <a class="footer__social-link" href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a class="footer__social-link" href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 011-1h3z"/>
+          </svg>
+        </a>
+        <a class="footer__social-link" href="#" aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy" data-i18n="footer.copy">© 2026 PEAKFIT. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+  </body>
+  </body>
 </html>

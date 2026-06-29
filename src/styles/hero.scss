@@ -1,0 +1,195 @@
+// ===== hero.scss =====
+// @use підключає _variables.scss — тепер $font-heading і т.д. доступні тут
+@use 'variables' as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url('../assets/bg-intro.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(20, 22, 10, 0.72);
+    z-index: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding: 160px 80px 48px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(40px, 7vw, 88px);
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 20px;
+    letter-spacing: 0.01em;
+    display: inline-block;
+
+    &:hover ~ .hero__divider {
+      width: 100%;
+    }
+  }
+
+  &__divider {
+    height: 3px;
+    background-color: var(--accent);
+    width: 48px;
+    margin-bottom: 20px;
+    transition: width 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: clamp(14px, 1.8vw, 18px);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.04em;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__dot {
+    color: var(--accent);
+    opacity: 0.7;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 32px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.25s ease, color 0.25s ease;
+
+    &--primary {
+      background-color: var(--accent);
+      color: #1a1c0a;
+      border: 2px solid var(--accent);
+
+      &:hover {
+        background-color: transparent;
+        color: var(--accent);
+      }
+    }
+
+    &--outline {
+      background-color: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+
+      &:hover {
+        background-color: var(--accent);
+        color: #1a1c0a;
+      }
+    }
+  }
+
+  &__stats {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    padding: 32px 80px 48px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-right: 64px;
+
+    &:not(:last-child) {
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      margin-right: 64px;
+    }
+  }
+
+  &__stat-number {
+    font-family: $font-heading;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  &__stat-label {
+    font-family: $font-body;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+// ===== RESPONSIVE =====
+
+@media (max-width: $bp-tablet) {
+  .hero {
+    &__content { padding: 120px 32px 40px; }
+
+    &__stats { padding: 24px 32px 36px; }
+
+    &__stat {
+      padding-right: 32px;
+
+      &:not(:last-child) { margin-right: 32px; }
+    }
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .hero {
+    &__content { padding: 100px 20px 32px; }
+
+    &__buttons {
+      flex-direction: column;
+
+      .hero__btn { text-align: center; }
+    }
+
+    &__stats {
+      padding: 20px 20px 32px;
+      justify-content: space-between;
+    }
+
+    &__stat {
+      padding-right: 0;
+
+      &:not(:last-child) {
+        border-right: none;
+        margin-right: 0;
+      }
+    }
+  }
+}
