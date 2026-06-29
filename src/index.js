@@ -1,4 +1,5 @@
 import "./styles/style.scss";
+import "./styles/hero.scss";
 
 // ─── Елементи ─────────────────────────────────────────────────────
 const header      = document.getElementById("header");
@@ -32,6 +33,24 @@ setActiveLang(savedLang);
 btnUA.addEventListener("click", () => switchLang("ua"));
 btnEN.addEventListener("click", () => switchLang("en"));
 
+
+function initHeroDivider() {
+  const title = document.querySelector('.hero__title');
+  const divider = document.querySelector('.hero__divider');
+ 
+  if (!title || !divider) return;
+ 
+  title.addEventListener('mouseenter', () => {
+    // getBoundingClientRect() повертає реальну ширину елемента в пікселях
+    const titleWidth = title.getBoundingClientRect().width;
+    divider.style.width = `${titleWidth}px`;
+  });
+ 
+  title.addEventListener('mouseleave', () => {
+    divider.style.width = '48px';
+  });
+}
+
 function switchLang(lang) {
   localStorage.setItem("lang", lang);
   setActiveLang(lang);
@@ -60,4 +79,9 @@ document.querySelectorAll(".header__nav-link").forEach(link => {
     burger.classList.remove("open");
     nav.classList.remove("open");
   });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  initHeroDivider();
 });

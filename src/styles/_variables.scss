@@ -1,0 +1,18 @@
+// ===== _variables.scss =====
+// Тільки SCSS змінні — статичні значення, не залежать від теми
+// Підключати через @use 'variables' as * у кожному .scss файлі
+// Цей файл НЕ генерує CSS — лише зберігає змінні
+
+// Шрифти
+$font-heading:  'Oswald', sans-serif;
+$font-body:     'Barlow Condensed', sans-serif;
+
+// Базові розміри
+$header-height: 64px;
+$radius-sm:     4px;
+$radius-md:     8px;
+
+// Брейкпоінти
+$bp-mobile:     480px;
+$bp-tablet:     768px;
+$bp-desktop:    1200px;

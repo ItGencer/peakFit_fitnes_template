@@ -60,7 +60,49 @@
   </header>
   </body>
   <main>
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="hero">
+  <div class="hero__overlay"></div>
 
+  <div class="hero__content">
+    <h1 class="hero__title">
+      <span data-i18n="hero.title.line1">ДИСЦИПЛІНА ТВОРИТЬ</span><br>
+      <span data-i18n="hero.title.line2">ЧЕМПІОНІВ</span>
+    </h1>
+
+    <!-- Лінія: анімується при hover на .hero__title -->
+    <div class="hero__divider"></div>
+
+    <p class="hero__subtitle">
+      <span data-i18n="hero.subtitle.1">Персональні тренування</span>
+      <span class="hero__dot" aria-hidden="true">·</span>
+      <span data-i18n="hero.subtitle.2">Силові програми</span>
+      <span class="hero__dot" aria-hidden="true">·</span>
+      <span data-i18n="hero.subtitle.3">Результат</span>
+    </p>
+
+    <div class="hero__buttons">
+      <a href="#contacts" class="hero__btn hero__btn--primary" data-i18n="hero.btn.signup">ЗАПИСАТИСЬ</a>
+      <a href="#services" class="hero__btn hero__btn--outline" data-i18n="hero.btn.more">ДІЗНАТИСЬ БІЛЬШЕ</a>
+    </div>
+  </div>
+
+  <!-- Статистика: текстові дані, атрибут data-stat для майбутнього Firebase -->
+  <div class="hero__stats">
+    <div class="hero__stat">
+      <span class="hero__stat-number" data-stat="clients">500+</span>
+      <span class="hero__stat-label" data-i18n="hero.stats.clients">КЛІЄНТІВ</span>
+    </div>
+    <div class="hero__stat">
+      <span class="hero__stat-number" data-stat="experience">8</span>
+      <span class="hero__stat-label" data-i18n="hero.stats.experience">РОКІВ ДОСВІДУ</span>
+    </div>
+    <div class="hero__stat">
+      <span class="hero__stat-number" data-stat="trainers">12</span>
+      <span class="hero__stat-label" data-i18n="hero.stats.trainers">ТРЕНЕРІВ</span>
+    </div>
+  </div>
+</section>
   </main>
   <footer class="footer">
   <div class="container">
