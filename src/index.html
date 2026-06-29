@@ -103,6 +103,185 @@
     </div>
   </div>
 </section>
+
+<!-- ===== SERVICES SECTION ===== -->
+<!-- Вставити в src/index.html після секції hero, перед footer -->
+
+<section class="services" id="services">
+  <div class="services__container">
+
+    <!-- Заголовок секції -->
+    <div class="services__header">
+      <span class="services__eyebrow">// <span data-i18n="services.eyebrow">PROGRAMS</span></span>
+      <h2 class="services__title" data-i18n="services.title">PEAK ARSENAL</h2>
+      <div class="services__divider"></div>
+    </div>
+
+    <!-- Сітка карток -->
+    <div class="services__grid">
+
+      <!-- 1. Персональні тренування — іконка: меч -->
+      <article class="services__card">
+        <div class="services__card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="19" x2="19" y2="5"/>
+            <polyline points="15 5 19 5 19 9"/>
+            <line x1="5" y1="19" x2="9" y2="15"/>
+            <line x1="5" y1="15" x2="9" y2="19"/>
+          </svg>
+        </div>
+        <h3 class="services__card-title" data-i18n="services.card1.title">PERSONAL TRAINING</h3>
+        <p class="services__card-desc" data-i18n="services.card1.desc">
+          Individual program tailored to your goals and pace.
+        </p>
+      </article>
+
+      <!-- 2. Силові програми — іконка: штанга -->
+      <article class="services__card">
+        <div class="services__card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 5h2M16 5h2M6 19h2M16 19h2"/>
+            <line x1="7" y1="5" x2="7" y2="19"/>
+            <line x1="17" y1="5" x2="17" y2="19"/>
+            <line x1="7" y1="12" x2="17" y2="12"/>
+            <line x1="2" y1="12" x2="6" y2="12"/>
+            <line x1="18" y1="12" x2="22" y2="12"/>
+          </svg>
+        </div>
+        <h3 class="services__card-title" data-i18n="services.card2.title">STRENGTH PROGRAMS</h3>
+        <p class="services__card-desc" data-i18n="services.card2.desc">
+          Progressive load work. Strength through discipline.
+        </p>
+      </article>
+
+      <!-- 3. Кардіо — іконка: вітер (wind) -->
+      <article class="services__card">
+        <div class="services__card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.59 4.59A2 2 0 1 1 11 8H2"/>
+            <path d="M12.59 19.41A2 2 0 1 0 14 16H2"/>
+            <path d="M6.5 12H2M18 12a4 4 0 0 0-4-4"/>
+          </svg>
+        </div>
+        <h3 class="services__card-title" data-i18n="services.card3.title">CARDIO & ENDURANCE</h3>
+        <p class="services__card-desc" data-i18n="services.card3.desc">
+          Breath, tempo and recovery systems.
+        </p>
+      </article>
+
+      <!-- 4. Функціональне тренування — іконка: стрілки циклу -->
+      <article class="services__card">
+        <div class="services__card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 1 21 5 17 9"/>
+            <path d="M3 11V9a4 4 0 014-4h14"/>
+            <polyline points="7 23 3 19 7 15"/>
+            <path d="M21 13v2a4 4 0 01-4 4H3"/>
+          </svg>
+        </div>
+        <h3 class="services__card-title" data-i18n="services.card4.title">FUNCTIONAL TRAINING</h3>
+        <p class="services__card-desc" data-i18n="services.card4.desc">
+          Movement that works in real life.
+        </p>
+      </article>
+
+      <!-- 5. Групові заняття — іконка: люди -->
+      <article class="services__card">
+        <div class="services__card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+            <path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <h3 class="services__card-title" data-i18n="services.card5.title">GROUP CLASSES</h3>
+        <p class="services__card-desc" data-i18n="services.card5.desc">
+          Team spirit and constant progress.
+        </p>
+      </article>
+
+      <!-- 6. Відновлення — іконка: квітка/листя (як на референсі) -->
+      <article class="services__card">
+        <div class="services__card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22V12"/>
+            <path d="M12 12C12 12 7 10 7 5a5 5 0 0 1 5-5 5 5 0 0 1 5 5c0 5-5 7-5 7z"/>
+            <path d="M12 12c0 0-4 1.5-6 5"/>
+            <path d="M12 12c0 0 4 1.5 6 5"/>
+          </svg>
+        </div>
+        <h3 class="services__card-title" data-i18n="services.card6.title">RECOVERY & STRETCH</h3>
+        <p class="services__card-desc" data-i18n="services.card6.desc">
+          Mobility, flexibility, regeneration.
+        </p>
+      </article>
+
+    </div><!-- /.services__grid -->
+  </div><!-- /.services__container -->
+</section>
+
+<!-- ===== TRAINERS SECTION ===== -->
+<!-- Вставити після секції services, перед секцією pricing -->
+
+<section class="trainers" id="trainers">
+  <div class="trainers__container">
+
+    <!-- Заголовок секції -->
+    <div class="trainers__header">
+      <span class="trainers__eyebrow">// <span data-i18n="trainers.eyebrow">COMMANDERS</span></span>
+      <h2 class="trainers__title" data-i18n="trainers.title">OUR TRAINERS</h2>
+      <div class="trainers__divider"></div>
+    </div>
+
+    <!-- Сітка карток -->
+    <div class="trainers__grid">
+
+      <!-- 1. Андрій Ковальчук -->
+      <article class="trainers__card">
+        <div class="trainers__card-photo"><img src="assets/trainer_1.jpg" alt="Андрій Ковальчук" />
+        </div>
+        <h3 class="trainers__card-name" data-i18n="trainers.trainer1.name">Андрій Ковальчук</h3>
+        <p class="trainers__card-spec" data-i18n="trainers.trainer1.spec">Силова підготовка</p>
+        <div class="trainers__card-exp">
+          <span data-i18n="trainers.trainer1.exp">8 років</span>
+        </div>
+      </article>
+
+      <!-- 2. Олена Шевченко -->
+      <article class="trainers__card">
+        <div class="trainers__card-photo">
+<img src="assets/trainer_2.jpg" alt="Олена Шевченко" />
+
+        </div>
+        <h3 class="trainers__card-name" data-i18n="trainers.trainer2.name">Олена Шевченко</h3>
+        <p class="trainers__card-spec" data-i18n="trainers.trainer2.spec">Функціональний тренінг</p>
+        <div class="trainers__card-exp">
+          <span data-i18n="trainers.trainer2.exp">6 років</span>
+        </div>
+      </article>
+
+      <!-- 3. Максим Бондар -->
+      <article class="trainers__card">
+        <div class="trainers__card-photo">
+          <img src="assets/trainer_3.jpg" alt="Максим Бондар" />
+        </div>
+        <h3 class="trainers__card-name" data-i18n="trainers.trainer3.name">Максим Бондар</h3>
+        <p class="trainers__card-spec" data-i18n="trainers.trainer3.spec">Кросфіт · Кардіо</p>
+        <div class="trainers__card-exp">
+          <span data-i18n="trainers.trainer3.exp">10 років</span>
+        </div>
+      </article>
+
+    </div><!-- /.trainers__grid -->
+  </div><!-- /.trainers__container -->
+</section>
   </main>
   <footer class="footer">
   <div class="container">

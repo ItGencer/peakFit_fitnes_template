@@ -1,5 +1,7 @@
 import "./styles/style.scss";
 import "./styles/hero.scss";
+import "./styles/services.scss";
+import "./styles/trainers.scss";
 
 // ─── Елементи ─────────────────────────────────────────────────────
 const header      = document.getElementById("header");
