@@ -458,6 +458,168 @@
   </div><!-- /.reviews__container -->
 </section>
 
+<!-- ===== CONTACT SECTION ===== -->
+<!-- Вставити після секції reviews, перед footer -->
+
+<section class="contact" id="contact">
+  <div class="contact__container">
+
+    <!-- Заголовок -->
+    <div class="contact__header">
+      <span class="contact__eyebrow">// <span data-i18n="contact.eyebrow">ЗВ'ЯЗОК</span></span>
+      <h2 class="contact__title" data-i18n="contact.title">ЗАПИСАТИСЬ НА ПРОБНЕ</h2>
+      <div class="contact__divider"></div>
+      <p class="contact__subtitle" data-i18n="contact.subtitle">Перше заняття — безкоштовно</p>
+    </div>
+
+    <!-- Двоколонковий лейаут -->
+    <div class="contact__body">
+
+      <!-- Ліва колонка: контакти + карта -->
+      <div class="contact__info">
+
+        <ul class="contact__details">
+          <li class="contact__detail">
+            <span class="contact__detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span data-i18n="contact.address">вул. Героїв РаКдіну, 1/8, Київ</span>
+          </li>
+          <li class="contact__detail">
+            <span class="contact__detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </span>
+            <a href="tel:+380 11 111 11 11" data-i18n="contact.phone">+380 11 111 11 11</a>
+          </li>
+          <li class="contact__detail">
+            <span class="contact__detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <a href="mailto:info@ironforce.ua" data-i18n="contact.email">info@ironforce.ua</a>
+          </li>
+          <li class="contact__detail">
+            <span class="contact__detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </span>
+            <span data-i18n="contact.hours">Пн–Нд: 06:00 – 23:00</span>
+          </li>
+        </ul>
+
+        <!-- Карта-заглушка (можна замінити на iframe Google Maps) -->
+        <div class="contact__map" aria-label="Карта розташування">
+          <div class="contact__map-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+        </div>
+
+      </div><!-- /.contact__info -->
+
+      <!-- Права колонка: форма -->
+      <form class="contact__form" id="contact-form" novalidate>
+
+        <div class="contact__field">
+          <input
+            class="contact__input"
+            type="text"
+            name="name"
+            id="contact-name"
+            placeholder=" "
+            autocomplete="given-name"
+            required
+          />
+          <label class="contact__label" for="contact-name" data-i18n="contact.form.name">Ім'я</label>
+        </div>
+
+        <div class="contact__field">
+          <input
+            class="contact__input"
+            type="tel"
+            name="phone"
+            id="contact-phone"
+            placeholder=" "
+            autocomplete="tel"
+            required
+          />
+          <label class="contact__label" for="contact-phone" data-i18n="contact.form.phone">Номер телефону</label>
+        </div>
+
+        <div class="contact__field">
+          <input
+            class="contact__input"
+            type="email"
+            name="email"
+            id="contact-email"
+            placeholder=" "
+            autocomplete="email"
+          />
+          <label class="contact__label" for="contact-email" data-i18n="contact.form.email">Email</label>
+        </div>
+
+        <!-- Програма — випадаючий список -->
+        <div class="contact__field contact__field--select">
+          <select class="contact__select" name="program" id="contact-program" required>
+            <option value="" disabled selected hidden></option>
+            <option value="personal"   data-i18n="contact.form.prog.personal">Персональні тренування</option>
+            <option value="strength"   data-i18n="contact.form.prog.strength">Силові програми</option>
+            <option value="cardio"     data-i18n="contact.form.prog.cardio">Кардіо та витривалість</option>
+            <option value="group"      data-i18n="contact.form.prog.group">Групові заняття</option>
+            <option value="functional" data-i18n="contact.form.prog.functional">Функціональний тренінг</option>
+          </select>
+          <label class="contact__label" for="contact-program" data-i18n="contact.form.program">Програма</label>
+          <span class="contact__select-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </div>
+
+        <!-- Зручний час — випадаючий список -->
+        <div class="contact__field contact__field--select">
+          <select class="contact__select" name="time" id="contact-time" required>
+            <option value="" disabled selected hidden></option>
+            <option value="morning"   data-i18n="contact.form.time.morning">Ранок (06:00 – 12:00)</option>
+            <option value="afternoon" data-i18n="contact.form.time.afternoon">День (12:00 – 17:00)</option>
+            <option value="evening"   data-i18n="contact.form.time.evening">Вечір (17:00 – 23:00)</option>
+          </select>
+          <label class="contact__label" for="contact-time" data-i18n="contact.form.time">Зручний час</label>
+          <span class="contact__select-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </div>
+
+        <button class="contact__submit" type="submit" data-i18n="contact.form.submit">
+          НАДІСЛАТИ ЗАЯВКУ
+        </button>
+
+      </form><!-- /.contact__form -->
+
+    </div><!-- /.contact__body -->
+  </div><!-- /.contact__container -->
+</section>
+
   </main>
   <footer class="footer">
   <div class="container">

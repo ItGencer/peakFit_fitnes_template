@@ -1,0 +1,295 @@
+// ===== _contact.scss =====
+@use 'variables' as *;
+
+.contact {
+  padding: 96px 0 80px;
+  background-color: var(--bg-primary);
+
+  &__container {
+    max-width: $bp-desktop;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  // ─── Header ────────────────────────────────────────────────────
+  &__header {
+    margin-bottom: 48px;
+  }
+
+  &__eyebrow {
+    display: block;
+    font-family: $font-body;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  &__divider {
+    width: 48px;
+    height: 2px;
+    background-color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+
+  // ─── Body: 2 колонки ───────────────────────────────────────────
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  // ─── Info (ліва колонка) ───────────────────────────────────────
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    padding: 12px 0;
+    border-left: 2px solid var(--border-color);
+    padding-left: 16px;
+
+    & + & {
+      margin-top: 8px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover { color: var(--accent); }
+    }
+  }
+
+  &__detail-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--accent);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // ─── Map placeholder ───────────────────────────────────────────
+  &__map {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    border: 1px solid var(--border-color);
+    border-radius: $radius-sm;
+    overflow: hidden;
+    background-color: rgba(138, 115, 64, 0.05);
+  }
+
+  &__map-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--border-color) 0,
+      var(--border-color) 1px,
+      transparent 0,
+      transparent 50%
+    );
+    background-size: 12px 12px;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      color: var(--accent);
+      opacity: 0.4;
+    }
+  }
+
+  // ─── Form ──────────────────────────────────────────────────────
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  // ─── Field (floating label) ────────────────────────────────────
+  &__field {
+    position: relative;
+  }
+
+  &__input,
+  &__select {
+    width: 100%;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: $radius-sm;
+    padding: 16px 16px 6px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: var(--accent);
+    }
+
+    &::placeholder { color: transparent; }
+  }
+
+  &__label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    pointer-events: none;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  }
+
+  &__input:focus ~ &__label,
+  &__input:not(:placeholder-shown) ~ &__label {
+    top: 8px;
+    transform: translateY(0);
+    font-size: 0.72rem;
+    color: var(--accent);
+  }
+
+  // ─── Select ────────────────────────────────────────────────────
+  &__field--select {
+    .contact__select {
+      cursor: pointer;
+      padding-right: 40px;
+    }
+
+    .contact__label {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: var(--text-secondary);
+    pointer-events: none;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // ─── Submit ────────────────────────────────────────────────────
+  &__submit {
+    width: 100%;
+    padding: 16px;
+    font-family: $font-body;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bg-primary);
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: $radius-sm;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+
+    &:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+  }
+}
+
+// ─── Select: floating label через JS клас ──────────────────────────
+// JS додає .has-value коли вибрано опцію
+.contact__select.has-value ~ .contact__label,
+.contact__select:focus ~ .contact__label {
+  top: 6px;
+  transform: translateY(0);
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+// Коли select має значення — збільшуємо padding-top щоб текст не накладався
+.contact__select.has-value,
+.contact__select:focus {
+  padding-top: 22px;
+  padding-bottom: 4px;
+}
+
+// ─── Option: фон для зручного читання ─────────────────────────────
+// Браузер дозволяє лише background-color + color на <option>
+.contact__select option {
+  font-family: $font-body;
+  font-size: 0.95rem;
+  background-color: #f0ebe0;
+  color: #2a2418;
+}
+
+.contact__select option[disabled] {
+  color: #9a8e6e;
+}
+
+[data-theme="dark"] .contact__select option {
+  background-color: #252818;
+  color: #e8dfc8;
+}
+
+[data-theme="dark"] .contact__select option[disabled] {
+  color: #5a5040;
+}

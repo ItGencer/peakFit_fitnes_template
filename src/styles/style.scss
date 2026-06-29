@@ -3,7 +3,8 @@
 
 // ─── CSS ЗМІННІ ──────────────────────────────────────────────────
 :root {
-  --bg-primary:            #f5f0e8;
+  --bg-primary:            #fff;
+  --bg-primary2:           #ede8d5;
   --bg-header:             #f5f0e8;
   --bg-footer:             #ddd6c5;
   --text-primary:          #2a2418;
@@ -19,7 +20,8 @@
 }
 
 [data-theme="dark"] {
-  --bg-primary:            #1a1c14;
+  --bg-primary:            #252518;
+  --bg-primary2:           #1c1c0e;
   --bg-header:             #1a1c14;
   --bg-footer:             #161608;
   --text-primary:          #e8dfc8;
