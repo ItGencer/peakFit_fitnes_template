@@ -1,0 +1,132 @@
+// ===== _reviews.scss =====
+@use 'variables' as *;
+
+.reviews {
+  padding: 96px 0 80px;
+  background-color: var(--bg-primary);
+
+  &__container {
+    max-width: $bp-desktop;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  // ─── Header ────────────────────────────────────────────────────
+  &__header {
+    margin-bottom: 48px;
+  }
+
+  &__eyebrow {
+    display: block;
+    font-family: $font-body;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  &__divider {
+    width: 48px;
+    height: 2px;
+    background-color: var(--accent);
+  }
+
+  // ─── Grid ──────────────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $bp-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // ─── Card ──────────────────────────────────────────────────────
+  &__card {
+    border: 1px solid var(--border-color);
+    border-radius: $radius-sm;
+    padding: 24px 28px;
+    background-color: transparent;
+    transition: border-color 0.25s ease;
+
+    &:hover {
+      border-color: var(--accent);
+    }
+  }
+
+  // ─── Top row: фото + ім'я + зірки ─────────────────────────────
+  &__card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__card-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__card-name {
+    font-family: $font-heading;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-primary);
+  }
+
+  // ─── Stars ─────────────────────────────────────────────────────
+  &__stars {
+    display: flex;
+    gap: 2px;
+
+    span {
+      font-size: 0.85rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+  }
+
+  // ─── Review text ───────────────────────────────────────────────
+  &__card-text {
+    font-family: $font-body;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+}
