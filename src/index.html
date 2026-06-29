@@ -282,6 +282,182 @@
     </div><!-- /.trainers__grid -->
   </div><!-- /.trainers__container -->
 </section>
+
+<!-- ===== PRICING SECTION ===== -->
+<!-- Вставити після секції trainers, перед секцією reviews -->
+
+<section class="pricing" id="pricing">
+  <div class="pricing__container">
+
+    <!-- Заголовок секції -->
+    <div class="pricing__header">
+      <span class="pricing__eyebrow">// <span data-i18n="pricing.eyebrow">АБОНЕМЕНТИ</span></span>
+      <h2 class="pricing__title" data-i18n="pricing.title">ОБЕРИ РІВЕНЬ</h2>
+      <div class="pricing__divider"></div>
+    </div>
+
+    <!-- Сітка карток -->
+    <div class="pricing__grid">
+
+      <!-- 1. РЕКРУТ -->
+      <article class="pricing__card">
+        <h3 class="pricing__plan" data-i18n="pricing.plan1.name">РЕКРУТ</h3>
+        <div class="pricing__price">
+          <span class="pricing__amount" data-i18n="pricing.plan1.price">800</span>
+          <span class="pricing__unit" data-i18n="pricing.unit">грн/міс</span>
+        </div>
+        <ul class="pricing__features">
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan1.f1">3 тренування / тиждень</span>
+          </li>
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan1.f2">Тренажерний зал</span>
+          </li>
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan1.f3">Базова консультація</span>
+          </li>
+        </ul>
+        <a href="#contact" class="pricing__btn" data-i18n="pricing.btn">ОБРАТИ</a>
+      </article>
+
+      <!-- 2. СОЛДАТ (найпопулярніший) -->
+      <article class="pricing__card pricing__card--featured">
+        <div class="pricing__badge" data-i18n="pricing.badge">НАЙПОПУЛЯРНІШИЙ</div>
+        <h3 class="pricing__plan" data-i18n="pricing.plan2.name">СОЛДАТ</h3>
+        <div class="pricing__price">
+          <span class="pricing__amount" data-i18n="pricing.plan2.price">1400</span>
+          <span class="pricing__unit" data-i18n="pricing.unit">грн/міс</span>
+        </div>
+        <ul class="pricing__features">
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan2.f1">Необмежені відвідування</span>
+          </li>
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan2.f2">Групові заняття</span>
+          </li>
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan2.f3">1 персональне на тиждень</span>
+          </li>
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan2.f4">Доступ у сауну</span>
+          </li>
+        </ul>
+        <a href="#contact" class="pricing__btn" data-i18n="pricing.btn">ОБРАТИ</a>
+      </article>
+
+      <!-- 3. КОМАНДИР -->
+      <article class="pricing__card">
+        <h3 class="pricing__plan" data-i18n="pricing.plan3.name">КОМАНДИР</h3>
+        <div class="pricing__price">
+          <span class="pricing__amount" data-i18n="pricing.plan3.price">2200</span>
+          <span class="pricing__unit" data-i18n="pricing.unit">грн/міс</span>
+        </div>
+        <ul class="pricing__features">
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan3.f1">Все включено</span>
+          </li>
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan3.f2">4 персональних на тиждень</span>
+          </li>
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan3.f3">Нутриціолог</span>
+          </li>
+          <li class="pricing__feature">
+            <span class="pricing__arrow" aria-hidden="true">›</span>
+            <span data-i18n="pricing.plan3.f4">Індивідуальний план</span>
+          </li>
+        </ul>
+        <a href="#contact" class="pricing__btn" data-i18n="pricing.btn">ОБРАТИ</a>
+      </article>
+
+    </div><!-- /.pricing__grid -->
+  </div><!-- /.pricing__container -->
+</section>
+
+<!-- ===== REVIEWS SECTION ===== -->
+<!-- Вставити після секції pricing, перед секцією contact -->
+
+<section class="reviews" id="reviews">
+  <div class="reviews__container">
+
+    <!-- Заголовок секції -->
+    <div class="reviews__header">
+      <span class="reviews__eyebrow">// <span data-i18n="reviews.eyebrow">БОЙОВІ ЗВІТИ</span></span>
+      <h2 class="reviews__title" data-i18n="reviews.title">ВІДГУКИ КЛІЄНТІВ</h2>
+      <div class="reviews__divider"></div>
+    </div>
+
+    <!-- Сітка карток -->
+    <div class="reviews__grid">
+
+      <!-- 1. Дмитро К. -->
+      <article class="reviews__card">
+        <div class="reviews__card-top">
+          <div class="reviews__card-photo">
+            <img src="<%= require('./assets/client_1.jpg') %>" alt="Дмитро К." />
+          </div>
+          <div class="reviews__card-meta">
+            <h3 class="reviews__card-name" data-i18n="reviews.review1.name">Дмитро К.</h3>
+            <div class="reviews__stars" aria-label="5 зірок">
+              <span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+          </div>
+        </div>
+        <p class="reviews__card-text" data-i18n="reviews.review1.text">
+          За 4 місяці скинув 14 кг. Тренери знають що роблять — дисципліна та результат.
+        </p>
+      </article>
+
+      <!-- 2. Ірина М. -->
+      <article class="reviews__card">
+        <div class="reviews__card-top">
+          <div class="reviews__card-photo">
+            <img src="<%= require('./assets/client_2.jpg') %>" alt="Ірина М." />
+          </div>
+          <div class="reviews__card-meta">
+            <h3 class="reviews__card-name" data-i18n="reviews.review2.name">Ірина М.</h3>
+            <div class="reviews__stars" aria-label="5 зірок">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+          </div>
+        </div>
+        <p class="reviews__card-text" data-i18n="reviews.review2.text">
+          Найкращий зал у місті. Атмосфера, обладнання, програма — все на висоті.
+        </p>
+      </article>
+
+      <!-- 3. Сергій В. -->
+      <article class="reviews__card">
+        <div class="reviews__card-top">
+          <div class="reviews__card-photo">
+            <img src="<%= require('./assets/client_3.jpg') %>" alt="Сергій В." />
+          </div>
+          <div class="reviews__card-meta">
+            <h3 class="reviews__card-name" data-i18n="reviews.review3.name">Сергій В.</h3>
+            <div class="reviews__stars" aria-label="5 зірок">
+              <span>★</span><span>★</span><span>★</span>
+            </div>
+          </div>
+        </div>
+        <p class="reviews__card-text" data-i18n="reviews.review3.text">
+          Прийшов з нуля, зараз тягну штангу 140 кг. IRON FORCE — це сім'я.
+        </p>
+      </article>
+
+    </div><!-- /.reviews__grid -->
+  </div><!-- /.reviews__container -->
+</section>
+
   </main>
   <footer class="footer">
   <div class="container">
