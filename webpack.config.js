@@ -1,54 +1,51 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require('copy-webpack-plugin');
 
-module.exports = {
-  entry: "./src/index.js",
+module.exports = (env, argv) => {
+  const isProduction = argv.mode === "production";
 
-  output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "bundle.[contenthash].js",
-    clean: true,
-    assetModuleFilename: "assets/[name][ext]",
-  },
+  return {
+    entry: "./src/index.js",
 
-  module: {
-    rules: [
-      {
-        test: /\.(scss|sass)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader",
-        ],
-      },
-      {
-        test: /\.(jpg|jpeg|png|svg|webp|gif)$/i,
-        type: "asset/resource",
-      },
+    output: {
+      path: path.resolve(__dirname, "public"),
+      filename: isProduction ? "bundle.[contenthash].js" : "bundle.js",
+      clean: true,
+      assetModuleFilename: "assets/[name].[hash][ext]",
+    },
+
+    module: {
+      rules: [
+        {
+          test: /\.(scss|sass)$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        },
+        {
+          test: /\.(jpg|jpeg|png|svg|webp|gif)$/i,
+          type: "asset/resource",
+        },
+      ],
+    },
+
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "./src/index.html",
+      }),
+      new MiniCssExtractPlugin({
+        filename: isProduction ? "styles.[contenthash].css" : "styles.css",
+      }),
     ],
-  },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-    }),
-    new MiniCssExtractPlugin({
-      filename: "styles.[contenthash].css",
-    }),
+    optimization: {
+      minimize: isProduction,
+    },
 
-  new CopyPlugin({
-    patterns: [
-      { from: 'src/assets', to: 'assets' }
-    ],
-  }),
-  ],
-
-  devServer: {
-    static: "./public",
-    port: 3000,
-    open: true,
-    hot: true,
-  },
+    devServer: {
+      static: "./public",
+      port: 3000,
+      open: true,
+      hot: true,
+    },
+  };
 };
