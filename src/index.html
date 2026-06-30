@@ -1,39 +1,35 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- src/index.html — додай у <head> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <title>PeakFit Fitnes</title>
-  </head>
-  <body>
-    <header class="header" id="header">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <title>PeakFit Fitnes</title>
+</head>
+
+<body>
+  <header class="header" id="header">
     <div class="header__container">
 
-      <!-- Логотип -->
       <a href="#top" class="header__logo">PeakFit</a>
 
-      <!-- Навігація -->
       <nav class="header__nav" id="nav">
         <ul class="header__nav-list">
-          <li><a href="#services"  class="header__nav-link" data-i18n="nav.services">ПОСЛУГИ</a></li>
-          <li><a href="#trainers"  class="header__nav-link" data-i18n="nav.trainers">ТРЕНЕРИ</a></li>
-          <li><a href="#pricing"   class="header__nav-link" data-i18n="nav.pricing">ЦІНИ</a></li>
-          <li><a href="#reviews"   class="header__nav-link" data-i18n="nav.reviews">ВІДГУКИ</a></li>
-          <li><a href="#contact"   class="header__nav-link" data-i18n="nav.contact">КОНТАКТИ</a></li>
+          <li><a href="#services" class="header__nav-link" data-i18n="nav.services">ПОСЛУГИ</a></li>
+          <li><a href="#trainers" class="header__nav-link" data-i18n="nav.trainers">ТРЕНЕРИ</a></li>
+          <li><a href="#pricing" class="header__nav-link" data-i18n="nav.pricing">ЦІНИ</a></li>
+          <li><a href="#reviews" class="header__nav-link" data-i18n="nav.reviews">ВІДГУКИ</a></li>
+          <li><a href="#contact" class="header__nav-link" data-i18n="nav.contact">КОНТАКТИ</a></li>
         </ul>
       </nav>
 
-      <!-- Панель управління -->
       <div class="header__controls">
 
-        <!-- Перемикач мови -->
         <div class="header__lang">
           <button class="header__lang-btn active" id="btn-ua" data-lang="ua">
             🇺🇦 UA
@@ -43,12 +39,10 @@
           </button>
         </div>
 
-        <!-- Перемикач теми -->
         <button class="header__theme-btn" id="theme-toggle" aria-label="Toggle theme">
           🌙
         </button>
 
-        <!-- Бургер (мобільний) -->
         <button class="header__burger" id="burger" aria-label="Menu">
           <span></span>
           <span></span>
@@ -58,613 +52,556 @@
       </div>
     </div>
   </header>
-  </body>
+
   <main>
-<!-- ===== HERO SECTION ===== -->
-<section class="hero" id="hero">
-  <div class="hero__overlay"></div>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__overlay"></div>
 
-  <div class="hero__content">
-    <h1 class="hero__title">
-      <span data-i18n="hero.title.line1">ДИСЦИПЛІНА ТВОРИТЬ</span><br>
-      <span data-i18n="hero.title.line2">ЧЕМПІОНІВ</span>
-    </h1>
+      <div class="hero__content">
+        <h1 class="hero__title">
+          <span data-i18n="hero.title.line1">ДИСЦИПЛІНА ТВОРИТЬ</span><br>
+          <span data-i18n="hero.title.line2">ЧЕМПІОНІВ</span>
+        </h1>
 
-    <!-- Лінія: анімується при hover на .hero__title -->
-    <div class="hero__divider"></div>
+        <div class="hero__divider"></div>
 
-    <p class="hero__subtitle">
-      <span data-i18n="hero.subtitle.1">Персональні тренування</span>
-      <span class="hero__dot" aria-hidden="true">·</span>
-      <span data-i18n="hero.subtitle.2">Силові програми</span>
-      <span class="hero__dot" aria-hidden="true">·</span>
-      <span data-i18n="hero.subtitle.3">Результат</span>
-    </p>
-
-    <div class="hero__buttons">
-      <a href="#contacts" class="hero__btn hero__btn--primary" data-i18n="hero.btn.signup">ЗАПИСАТИСЬ</a>
-      <a href="#services" class="hero__btn hero__btn--outline" data-i18n="hero.btn.more">ДІЗНАТИСЬ БІЛЬШЕ</a>
-    </div>
-  </div>
-
-  <!-- Статистика: текстові дані, атрибут data-stat для майбутнього Firebase -->
-  <div class="hero__stats">
-    <div class="hero__stat">
-      <span class="hero__stat-number" data-stat="clients">500+</span>
-      <span class="hero__stat-label" data-i18n="hero.stats.clients">КЛІЄНТІВ</span>
-    </div>
-    <div class="hero__stat">
-      <span class="hero__stat-number" data-stat="experience">8</span>
-      <span class="hero__stat-label" data-i18n="hero.stats.experience">РОКІВ ДОСВІДУ</span>
-    </div>
-    <div class="hero__stat">
-      <span class="hero__stat-number" data-stat="trainers">12</span>
-      <span class="hero__stat-label" data-i18n="hero.stats.trainers">ТРЕНЕРІВ</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SERVICES SECTION ===== -->
-<!-- Вставити в src/index.html після секції hero, перед footer -->
-
-<section class="services" id="services">
-  <div class="services__container">
-
-    <!-- Заголовок секції -->
-    <div class="services__header">
-      <span class="services__eyebrow">// <span data-i18n="services.eyebrow">PROGRAMS</span></span>
-      <h2 class="services__title" data-i18n="services.title">PEAK ARSENAL</h2>
-      <div class="services__divider"></div>
-    </div>
-
-    <!-- Сітка карток -->
-    <div class="services__grid">
-
-      <!-- 1. Персональні тренування — іконка: меч -->
-      <article class="services__card">
-        <div class="services__card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="19" x2="19" y2="5"/>
-            <polyline points="15 5 19 5 19 9"/>
-            <line x1="5" y1="19" x2="9" y2="15"/>
-            <line x1="5" y1="15" x2="9" y2="19"/>
-          </svg>
-        </div>
-        <h3 class="services__card-title" data-i18n="services.card1.title">PERSONAL TRAINING</h3>
-        <p class="services__card-desc" data-i18n="services.card1.desc">
-          Individual program tailored to your goals and pace.
+        <p class="hero__subtitle">
+          <span data-i18n="hero.subtitle.1">Персональні тренування</span>
+          <span class="hero__dot" aria-hidden="true">·</span>
+          <span data-i18n="hero.subtitle.2">Силові програми</span>
+          <span class="hero__dot" aria-hidden="true">·</span>
+          <span data-i18n="hero.subtitle.3">Результат</span>
         </p>
-      </article>
 
-      <!-- 2. Силові програми — іконка: штанга -->
-      <article class="services__card">
-        <div class="services__card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 5h2M16 5h2M6 19h2M16 19h2"/>
-            <line x1="7" y1="5" x2="7" y2="19"/>
-            <line x1="17" y1="5" x2="17" y2="19"/>
-            <line x1="7" y1="12" x2="17" y2="12"/>
-            <line x1="2" y1="12" x2="6" y2="12"/>
-            <line x1="18" y1="12" x2="22" y2="12"/>
-          </svg>
+        <div class="hero__buttons">
+          <a href="#contacts" class="hero__btn hero__btn--primary" data-i18n="hero.btn.signup">ЗАПИСАТИСЬ</a>
+          <a href="#services" class="hero__btn hero__btn--outline" data-i18n="hero.btn.more">ДІЗНАТИСЬ БІЛЬШЕ</a>
         </div>
-        <h3 class="services__card-title" data-i18n="services.card2.title">STRENGTH PROGRAMS</h3>
-        <p class="services__card-desc" data-i18n="services.card2.desc">
-          Progressive load work. Strength through discipline.
-        </p>
-      </article>
+      </div>
 
-      <!-- 3. Кардіо — іконка: вітер (wind) -->
-      <article class="services__card">
-        <div class="services__card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9.59 4.59A2 2 0 1 1 11 8H2"/>
-            <path d="M12.59 19.41A2 2 0 1 0 14 16H2"/>
-            <path d="M6.5 12H2M18 12a4 4 0 0 0-4-4"/>
-          </svg>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-stat="clients">500+</span>
+          <span class="hero__stat-label" data-i18n="hero.stats.clients">КЛІЄНТІВ</span>
         </div>
-        <h3 class="services__card-title" data-i18n="services.card3.title">CARDIO & ENDURANCE</h3>
-        <p class="services__card-desc" data-i18n="services.card3.desc">
-          Breath, tempo and recovery systems.
-        </p>
-      </article>
-
-      <!-- 4. Функціональне тренування — іконка: стрілки циклу -->
-      <article class="services__card">
-        <div class="services__card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="17 1 21 5 17 9"/>
-            <path d="M3 11V9a4 4 0 014-4h14"/>
-            <polyline points="7 23 3 19 7 15"/>
-            <path d="M21 13v2a4 4 0 01-4 4H3"/>
-          </svg>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-stat="experience">8</span>
+          <span class="hero__stat-label" data-i18n="hero.stats.experience">РОКІВ ДОСВІДУ</span>
         </div>
-        <h3 class="services__card-title" data-i18n="services.card4.title">FUNCTIONAL TRAINING</h3>
-        <p class="services__card-desc" data-i18n="services.card4.desc">
-          Movement that works in real life.
-        </p>
-      </article>
-
-      <!-- 5. Групові заняття — іконка: люди -->
-      <article class="services__card">
-        <div class="services__card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
-            <path d="M16 3.13a4 4 0 010 7.75"/>
-          </svg>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-stat="trainers">12</span>
+          <span class="hero__stat-label" data-i18n="hero.stats.trainers">ТРЕНЕРІВ</span>
         </div>
-        <h3 class="services__card-title" data-i18n="services.card5.title">GROUP CLASSES</h3>
-        <p class="services__card-desc" data-i18n="services.card5.desc">
-          Team spirit and constant progress.
-        </p>
-      </article>
+      </div>
+    </section>
 
-      <!-- 6. Відновлення — іконка: квітка/листя (як на референсі) -->
-      <article class="services__card">
-        <div class="services__card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22V12"/>
-            <path d="M12 12C12 12 7 10 7 5a5 5 0 0 1 5-5 5 5 0 0 1 5 5c0 5-5 7-5 7z"/>
-            <path d="M12 12c0 0-4 1.5-6 5"/>
-            <path d="M12 12c0 0 4 1.5 6 5"/>
-          </svg>
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services" id="services">
+      <div class="services__container">
+
+        <div class="services__header">
+          <span class="services__eyebrow">// <span data-i18n="services.eyebrow">PROGRAMS</span></span>
+          <h2 class="services__title" data-i18n="services.title">PEAK ARSENAL</h2>
+          <div class="services__divider"></div>
         </div>
-        <h3 class="services__card-title" data-i18n="services.card6.title">RECOVERY & STRETCH</h3>
-        <p class="services__card-desc" data-i18n="services.card6.desc">
-          Mobility, flexibility, regeneration.
-        </p>
-      </article>
 
-    </div><!-- /.services__grid -->
-  </div><!-- /.services__container -->
-</section>
+        <div class="services__grid">
 
-<!-- ===== TRAINERS SECTION ===== -->
-<!-- Вставити після секції services, перед секцією pricing -->
-
-<section class="trainers" id="trainers">
-  <div class="trainers__container">
-
-    <!-- Заголовок секції -->
-    <div class="trainers__header">
-      <span class="trainers__eyebrow">// <span data-i18n="trainers.eyebrow">COMMANDERS</span></span>
-      <h2 class="trainers__title" data-i18n="trainers.title">OUR TRAINERS</h2>
-      <div class="trainers__divider"></div>
-    </div>
-
-    <!-- Сітка карток -->
-    <div class="trainers__grid">
-
-      <!-- 1. Андрій Ковальчук -->
-      <article class="trainers__card">
-        <div class="trainers__card-photo"><img src="assets/trainer_1.jpg" alt="Андрій Ковальчук" />
-        </div>
-        <h3 class="trainers__card-name" data-i18n="trainers.trainer1.name">Андрій Ковальчук</h3>
-        <p class="trainers__card-spec" data-i18n="trainers.trainer1.spec">Силова підготовка</p>
-        <div class="trainers__card-exp">
-          <span data-i18n="trainers.trainer1.exp">8 років</span>
-        </div>
-      </article>
-
-      <!-- 2. Олена Шевченко -->
-      <article class="trainers__card">
-        <div class="trainers__card-photo">
-<img src="assets/trainer_2.jpg" alt="Олена Шевченко" />
-
-        </div>
-        <h3 class="trainers__card-name" data-i18n="trainers.trainer2.name">Олена Шевченко</h3>
-        <p class="trainers__card-spec" data-i18n="trainers.trainer2.spec">Функціональний тренінг</p>
-        <div class="trainers__card-exp">
-          <span data-i18n="trainers.trainer2.exp">6 років</span>
-        </div>
-      </article>
-
-      <!-- 3. Максим Бондар -->
-      <article class="trainers__card">
-        <div class="trainers__card-photo">
-          <img src="assets/trainer_3.jpg" alt="Максим Бондар" />
-        </div>
-        <h3 class="trainers__card-name" data-i18n="trainers.trainer3.name">Максим Бондар</h3>
-        <p class="trainers__card-spec" data-i18n="trainers.trainer3.spec">Кросфіт · Кардіо</p>
-        <div class="trainers__card-exp">
-          <span data-i18n="trainers.trainer3.exp">10 років</span>
-        </div>
-      </article>
-
-    </div><!-- /.trainers__grid -->
-  </div><!-- /.trainers__container -->
-</section>
-
-<!-- ===== PRICING SECTION ===== -->
-<!-- Вставити після секції trainers, перед секцією reviews -->
-
-<section class="pricing" id="pricing">
-  <div class="pricing__container">
-
-    <!-- Заголовок секції -->
-    <div class="pricing__header">
-      <span class="pricing__eyebrow">// <span data-i18n="pricing.eyebrow">АБОНЕМЕНТИ</span></span>
-      <h2 class="pricing__title" data-i18n="pricing.title">ОБЕРИ РІВЕНЬ</h2>
-      <div class="pricing__divider"></div>
-    </div>
-
-    <!-- Сітка карток -->
-    <div class="pricing__grid">
-
-      <!-- 1. РЕКРУТ -->
-      <article class="pricing__card">
-        <h3 class="pricing__plan" data-i18n="pricing.plan1.name">РЕКРУТ</h3>
-        <div class="pricing__price">
-          <span class="pricing__amount" data-i18n="pricing.plan1.price">800</span>
-          <span class="pricing__unit" data-i18n="pricing.unit">грн/міс</span>
-        </div>
-        <ul class="pricing__features">
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan1.f1">3 тренування / тиждень</span>
-          </li>
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan1.f2">Тренажерний зал</span>
-          </li>
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan1.f3">Базова консультація</span>
-          </li>
-        </ul>
-        <a href="#contact" class="pricing__btn" data-i18n="pricing.btn">ОБРАТИ</a>
-      </article>
-
-      <!-- 2. СОЛДАТ (найпопулярніший) -->
-      <article class="pricing__card pricing__card--featured">
-        <div class="pricing__badge" data-i18n="pricing.badge">НАЙПОПУЛЯРНІШИЙ</div>
-        <h3 class="pricing__plan" data-i18n="pricing.plan2.name">СОЛДАТ</h3>
-        <div class="pricing__price">
-          <span class="pricing__amount" data-i18n="pricing.plan2.price">1400</span>
-          <span class="pricing__unit" data-i18n="pricing.unit">грн/міс</span>
-        </div>
-        <ul class="pricing__features">
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan2.f1">Необмежені відвідування</span>
-          </li>
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan2.f2">Групові заняття</span>
-          </li>
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan2.f3">1 персональне на тиждень</span>
-          </li>
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan2.f4">Доступ у сауну</span>
-          </li>
-        </ul>
-        <a href="#contact" class="pricing__btn" data-i18n="pricing.btn">ОБРАТИ</a>
-      </article>
-
-      <!-- 3. КОМАНДИР -->
-      <article class="pricing__card">
-        <h3 class="pricing__plan" data-i18n="pricing.plan3.name">КОМАНДИР</h3>
-        <div class="pricing__price">
-          <span class="pricing__amount" data-i18n="pricing.plan3.price">2200</span>
-          <span class="pricing__unit" data-i18n="pricing.unit">грн/міс</span>
-        </div>
-        <ul class="pricing__features">
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan3.f1">Все включено</span>
-          </li>
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan3.f2">4 персональних на тиждень</span>
-          </li>
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan3.f3">Нутриціолог</span>
-          </li>
-          <li class="pricing__feature">
-            <span class="pricing__arrow" aria-hidden="true">›</span>
-            <span data-i18n="pricing.plan3.f4">Індивідуальний план</span>
-          </li>
-        </ul>
-        <a href="#contact" class="pricing__btn" data-i18n="pricing.btn">ОБРАТИ</a>
-      </article>
-
-    </div><!-- /.pricing__grid -->
-  </div><!-- /.pricing__container -->
-</section>
-
-<!-- ===== REVIEWS SECTION ===== -->
-<!-- Вставити після секції pricing, перед секцією contact -->
-
-<section class="reviews" id="reviews">
-  <div class="reviews__container">
-
-    <!-- Заголовок секції -->
-    <div class="reviews__header">
-      <span class="reviews__eyebrow">// <span data-i18n="reviews.eyebrow">БОЙОВІ ЗВІТИ</span></span>
-      <h2 class="reviews__title" data-i18n="reviews.title">ВІДГУКИ КЛІЄНТІВ</h2>
-      <div class="reviews__divider"></div>
-    </div>
-
-    <!-- Сітка карток -->
-    <div class="reviews__grid">
-
-      <!-- 1. Дмитро К. -->
-      <article class="reviews__card">
-        <div class="reviews__card-top">
-          <div class="reviews__card-photo">
-            <img src="<%= require('./assets/client_1.jpg') %>" alt="Дмитро К." />
-          </div>
-          <div class="reviews__card-meta">
-            <h3 class="reviews__card-name" data-i18n="reviews.review1.name">Дмитро К.</h3>
-            <div class="reviews__stars" aria-label="5 зірок">
-              <span>★</span><span>★</span><span>★</span><span>★</span>
+          <article class="services__card">
+            <div class="services__card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="19" x2="19" y2="5" />
+                <polyline points="15 5 19 5 19 9" />
+                <line x1="5" y1="19" x2="9" y2="15" />
+                <line x1="5" y1="15" x2="9" y2="19" />
+              </svg>
             </div>
-          </div>
-        </div>
-        <p class="reviews__card-text" data-i18n="reviews.review1.text">
-          За 4 місяці скинув 14 кг. Тренери знають що роблять — дисципліна та результат.
-        </p>
-      </article>
+            <h3 class="services__card-title" data-i18n="services.card1.title">PERSONAL TRAINING</h3>
+            <p class="services__card-desc" data-i18n="services.card1.desc">
+              Individual program tailored to your goals and pace.
+            </p>
+          </article>
 
-      <!-- 2. Ірина М. -->
-      <article class="reviews__card">
-        <div class="reviews__card-top">
-          <div class="reviews__card-photo">
-            <img src="<%= require('./assets/client_2.jpg') %>" alt="Ірина М." />
-          </div>
-          <div class="reviews__card-meta">
-            <h3 class="reviews__card-name" data-i18n="reviews.review2.name">Ірина М.</h3>
-            <div class="reviews__stars" aria-label="5 зірок">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          <article class="services__card">
+            <div class="services__card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 5h2M16 5h2M6 19h2M16 19h2" />
+                <line x1="7" y1="5" x2="7" y2="19" />
+                <line x1="17" y1="5" x2="17" y2="19" />
+                <line x1="7" y1="12" x2="17" y2="12" />
+                <line x1="2" y1="12" x2="6" y2="12" />
+                <line x1="18" y1="12" x2="22" y2="12" />
+              </svg>
             </div>
-          </div>
-        </div>
-        <p class="reviews__card-text" data-i18n="reviews.review2.text">
-          Найкращий зал у місті. Атмосфера, обладнання, програма — все на висоті.
-        </p>
-      </article>
+            <h3 class="services__card-title" data-i18n="services.card2.title">STRENGTH PROGRAMS</h3>
+            <p class="services__card-desc" data-i18n="services.card2.desc">
+              Progressive load work. Strength through discipline.
+            </p>
+          </article>
 
-      <!-- 3. Сергій В. -->
-      <article class="reviews__card">
-        <div class="reviews__card-top">
-          <div class="reviews__card-photo">
-            <img src="<%= require('./assets/client_3.jpg') %>" alt="Сергій В." />
-          </div>
-          <div class="reviews__card-meta">
-            <h3 class="reviews__card-name" data-i18n="reviews.review3.name">Сергій В.</h3>
-            <div class="reviews__stars" aria-label="5 зірок">
-              <span>★</span><span>★</span><span>★</span>
+          <article class="services__card">
+            <div class="services__card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.59 4.59A2 2 0 1 1 11 8H2" />
+                <path d="M12.59 19.41A2 2 0 1 0 14 16H2" />
+                <path d="M6.5 12H2M18 12a4 4 0 0 0-4-4" />
+              </svg>
             </div>
+            <h3 class="services__card-title" data-i18n="services.card3.title">CARDIO & ENDURANCE</h3>
+            <p class="services__card-desc" data-i18n="services.card3.desc">
+              Breath, tempo and recovery systems.
+            </p>
+          </article>
+
+          <article class="services__card">
+            <div class="services__card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="17 1 21 5 17 9" />
+                <path d="M3 11V9a4 4 0 014-4h14" />
+                <polyline points="7 23 3 19 7 15" />
+                <path d="M21 13v2a4 4 0 01-4 4H3" />
+              </svg>
+            </div>
+            <h3 class="services__card-title" data-i18n="services.card4.title">FUNCTIONAL TRAINING</h3>
+            <p class="services__card-desc" data-i18n="services.card4.desc">
+              Movement that works in real life.
+            </p>
+          </article>
+
+          <article class="services__card">
+            <div class="services__card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                <path d="M16 3.13a4 4 0 010 7.75" />
+              </svg>
+            </div>
+            <h3 class="services__card-title" data-i18n="services.card5.title">GROUP CLASSES</h3>
+            <p class="services__card-desc" data-i18n="services.card5.desc">
+              Team spirit and constant progress.
+            </p>
+          </article>
+
+          <article class="services__card">
+            <div class="services__card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22V12" />
+                <path d="M12 12C12 12 7 10 7 5a5 5 0 0 1 5-5 5 5 0 0 1 5 5c0 5-5 7-5 7z" />
+                <path d="M12 12c0 0-4 1.5-6 5" />
+                <path d="M12 12c0 0 4 1.5 6 5" />
+              </svg>
+            </div>
+            <h3 class="services__card-title" data-i18n="services.card6.title">RECOVERY & STRETCH</h3>
+            <p class="services__card-desc" data-i18n="services.card6.desc">
+              Mobility, flexibility, regeneration.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRAINERS SECTION ===== -->
+    <section class="trainers" id="trainers">
+      <div class="trainers__container">
+
+        <div class="trainers__header">
+          <span class="trainers__eyebrow">// <span data-i18n="trainers.eyebrow">COMMANDERS</span></span>
+          <h2 class="trainers__title" data-i18n="trainers.title">OUR TRAINERS</h2>
+          <div class="trainers__divider"></div>
+        </div>
+
+        <div class="trainers__grid">
+
+          <article class="trainers__card">
+            <div class="trainers__card-photo">
+              <img data-src="trainer_1.jpg" alt="Андрій Ковальчук" />
+            </div>
+            <h3 class="trainers__card-name" data-i18n="trainers.trainer1.name">Андрій Ковальчук</h3>
+            <p class="trainers__card-spec" data-i18n="trainers.trainer1.spec">Силова підготовка</p>
+            <div class="trainers__card-exp">
+              <span data-i18n="trainers.trainer1.exp">8 років</span>
+            </div>
+          </article>
+
+          <article class="trainers__card">
+            <div class="trainers__card-photo">
+              <img data-src="trainer_2.jpg" alt="Олена Шевченко" />
+            </div>
+            <h3 class="trainers__card-name" data-i18n="trainers.trainer2.name">Олена Шевченко</h3>
+            <p class="trainers__card-spec" data-i18n="trainers.trainer2.spec">Функціональний тренінг</p>
+            <div class="trainers__card-exp">
+              <span data-i18n="trainers.trainer2.exp">6 років</span>
+            </div>
+          </article>
+
+          <article class="trainers__card">
+            <div class="trainers__card-photo">
+              <img data-src="trainer_3.jpg" alt="Максим Бондар" />
+            </div>
+            <h3 class="trainers__card-name" data-i18n="trainers.trainer3.name">Максим Бондар</h3>
+            <p class="trainers__card-spec" data-i18n="trainers.trainer3.spec">Кросфіт · Кардіо</p>
+            <div class="trainers__card-exp">
+              <span data-i18n="trainers.trainer3.exp">10 років</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING SECTION ===== -->
+    <section class="pricing" id="pricing">
+      <div class="pricing__container">
+
+        <div class="pricing__header">
+          <span class="pricing__eyebrow">// <span data-i18n="pricing.eyebrow">АБОНЕМЕНТИ</span></span>
+          <h2 class="pricing__title" data-i18n="pricing.title">ОБЕРИ РІВЕНЬ</h2>
+          <div class="pricing__divider"></div>
+        </div>
+
+        <div class="pricing__grid">
+
+          <article class="pricing__card">
+            <h3 class="pricing__plan" data-i18n="pricing.plan1.name">РЕКРУТ</h3>
+            <div class="pricing__price">
+              <span class="pricing__amount" data-i18n="pricing.plan1.price">800</span>
+              <span class="pricing__unit" data-i18n="pricing.unit">грн/міс</span>
+            </div>
+            <ul class="pricing__features">
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan1.f1">3 тренування / тиждень</span>
+              </li>
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan1.f2">Тренажерний зал</span>
+              </li>
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan1.f3">Базова консультація</span>
+              </li>
+            </ul>
+            <a href="#contact" class="pricing__btn" data-i18n="pricing.btn">ОБРАТИ</a>
+          </article>
+
+          <article class="pricing__card pricing__card--featured">
+            <div class="pricing__badge" data-i18n="pricing.badge">НАЙПОПУЛЯРНІШИЙ</div>
+            <h3 class="pricing__plan" data-i18n="pricing.plan2.name">СОЛДАТ</h3>
+            <div class="pricing__price">
+              <span class="pricing__amount" data-i18n="pricing.plan2.price">1400</span>
+              <span class="pricing__unit" data-i18n="pricing.unit">грн/міс</span>
+            </div>
+            <ul class="pricing__features">
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan2.f1">Необмежені відвідування</span>
+              </li>
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan2.f2">Групові заняття</span>
+              </li>
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan2.f3">1 персональне на тиждень</span>
+              </li>
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan2.f4">Доступ у сауну</span>
+              </li>
+            </ul>
+            <a href="#contact" class="pricing__btn" data-i18n="pricing.btn">ОБРАТИ</a>
+          </article>
+
+          <article class="pricing__card">
+            <h3 class="pricing__plan" data-i18n="pricing.plan3.name">КОМАНДИР</h3>
+            <div class="pricing__price">
+              <span class="pricing__amount" data-i18n="pricing.plan3.price">2200</span>
+              <span class="pricing__unit" data-i18n="pricing.unit">грн/міс</span>
+            </div>
+            <ul class="pricing__features">
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan3.f1">Все включено</span>
+              </li>
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan3.f2">4 персональних на тиждень</span>
+              </li>
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan3.f3">Нутриціолог</span>
+              </li>
+              <li class="pricing__feature">
+                <span class="pricing__arrow" aria-hidden="true">›</span>
+                <span data-i18n="pricing.plan3.f4">Індивідуальний план</span>
+              </li>
+            </ul>
+            <a href="#contact" class="pricing__btn" data-i18n="pricing.btn">ОБРАТИ</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REVIEWS SECTION ===== -->
+    <section class="reviews" id="reviews">
+      <div class="reviews__container">
+
+        <div class="reviews__header">
+          <span class="reviews__eyebrow">// <span data-i18n="reviews.eyebrow">БОЙОВІ ЗВІТИ</span></span>
+          <h2 class="reviews__title" data-i18n="reviews.title">ВІДГУКИ КЛІЄНТІВ</h2>
+          <div class="reviews__divider"></div>
+        </div>
+
+        <div class="reviews__grid">
+
+          <article class="reviews__card">
+            <div class="reviews__card-top">
+              <div class="reviews__card-photo">
+                <img data-src="client_1.jpg" alt="Дмитро К." />
+              </div>
+              <div class="reviews__card-meta">
+                <h3 class="reviews__card-name" data-i18n="reviews.review1.name">Дмитро К.</h3>
+                <div class="reviews__stars" aria-label="5 зірок">
+                  <span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+            </div>
+            <p class="reviews__card-text" data-i18n="reviews.review1.text">
+              За 4 місяці скинув 14 кг. Тренери знають що роблять — дисципліна та результат.
+            </p>
+          </article>
+
+          <article class="reviews__card">
+            <div class="reviews__card-top">
+              <div class="reviews__card-photo">
+                <img data-src="client_2.jpg" alt="Ірина М." />
+              </div>
+              <div class="reviews__card-meta">
+                <h3 class="reviews__card-name" data-i18n="reviews.review2.name">Ірина М.</h3>
+                <div class="reviews__stars" aria-label="5 зірок">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+            </div>
+            <p class="reviews__card-text" data-i18n="reviews.review2.text">
+              Найкращий зал у місті. Атмосфера, обладнання, програма — все на висоті.
+            </p>
+          </article>
+
+          <article class="reviews__card">
+            <div class="reviews__card-top">
+              <div class="reviews__card-photo">
+                <img data-src="client_3.jpg" alt="Сергій В." />
+              </div>
+              <div class="reviews__card-meta">
+                <h3 class="reviews__card-name" data-i18n="reviews.review3.name">Сергій В.</h3>
+                <div class="reviews__stars" aria-label="5 зірок">
+                  <span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+            </div>
+            <p class="reviews__card-text" data-i18n="reviews.review3.text">
+              Прийшов з нуля, зараз тягну штангу 140 кг. IRON FORCE — це сім'я.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact" id="contact">
+      <div class="contact__container">
+
+        <div class="contact__header">
+          <span class="contact__eyebrow">// <span data-i18n="contact.eyebrow">ЗВ'ЯЗОК</span></span>
+          <h2 class="contact__title" data-i18n="contact.title">ЗАПИСАТИСЬ НА ПРОБНЕ</h2>
+          <div class="contact__divider"></div>
+          <p class="contact__subtitle" data-i18n="contact.subtitle">Перше заняття — безкоштовно</p>
+        </div>
+
+        <div class="contact__body">
+
+          <div class="contact__info">
+
+            <ul class="contact__details">
+              <li class="contact__detail">
+                <span class="contact__detail-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <span data-i18n="contact.address">вул. Героїв РаКдіну, 1/8, Київ</span>
+              </li>
+              <li class="contact__detail">
+                <span class="contact__detail-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                  </svg>
+                </span>
+                <a href="tel:+380 11 111 11 11" data-i18n="contact.phone">+380 11 111 11 11</a>
+              </li>
+              <li class="contact__detail">
+                <span class="contact__detail-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </span>
+                <a href="mailto:info@ironforce.ua" data-i18n="contact.email">info@ironforce.ua</a>
+              </li>
+              <li class="contact__detail">
+                <span class="contact__detail-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </span>
+                <span data-i18n="contact.hours">Пн–Нд: 06:00 – 23:00</span>
+              </li>
+            </ul>
+
+            <div class="contact__map" aria-label="Карта розташування">
+              <div class="contact__map-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+            </div>
+
           </div>
+
+          <form class="contact__form" id="contact-form" novalidate>
+
+            <div class="contact__field">
+              <input class="contact__input" type="text" name="name" id="contact-name" placeholder=" "
+                autocomplete="given-name" required />
+              <label class="contact__label" for="contact-name" data-i18n="contact.form.name">Ім'я</label>
+            </div>
+
+            <div class="contact__field">
+              <input class="contact__input" type="tel" name="phone" id="contact-phone" placeholder=" "
+                autocomplete="tel" required />
+              <label class="contact__label" for="contact-phone" data-i18n="contact.form.phone">Номер телефону</label>
+            </div>
+
+            <div class="contact__field">
+              <input class="contact__input" type="email" name="email" id="contact-email" placeholder=" "
+                autocomplete="email" />
+              <label class="contact__label" for="contact-email" data-i18n="contact.form.email">Email</label>
+            </div>
+
+            <div class="contact__field contact__field--select">
+              <select class="contact__select" name="program" id="contact-program" required>
+                <option value="" disabled selected hidden></option>
+                <option value="personal" data-i18n="contact.form.prog.personal">Персональні тренування</option>
+                <option value="strength" data-i18n="contact.form.prog.strength">Силові програми</option>
+                <option value="cardio" data-i18n="contact.form.prog.cardio">Кардіо та витривалість</option>
+                <option value="group" data-i18n="contact.form.prog.group">Групові заняття</option>
+                <option value="functional" data-i18n="contact.form.prog.functional">Функціональний тренінг</option>
+              </select>
+              <label class="contact__label" for="contact-program" data-i18n="contact.form.program">Програма</label>
+              <span class="contact__select-arrow" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </span>
+            </div>
+
+            <div class="contact__field contact__field--select">
+              <select class="contact__select" name="time" id="contact-time" required>
+                <option value="" disabled selected hidden></option>
+                <option value="morning" data-i18n="contact.form.time.morning">Ранок (06:00 – 12:00)</option>
+                <option value="afternoon" data-i18n="contact.form.time.afternoon">День (12:00 – 17:00)</option>
+                <option value="evening" data-i18n="contact.form.time.evening">Вечір (17:00 – 23:00)</option>
+              </select>
+              <label class="contact__label" for="contact-time" data-i18n="contact.form.time">Зручний час</label>
+              <span class="contact__select-arrow" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </span>
+            </div>
+
+            <button class="contact__submit" type="submit" data-i18n="contact.form.submit">
+              НАДІСЛАТИ ЗАЯВКУ
+            </button>
+
+          </form>
+
         </div>
-        <p class="reviews__card-text" data-i18n="reviews.review3.text">
-          Прийшов з нуля, зараз тягну штангу 140 кг. IRON FORCE — це сім'я.
-        </p>
-      </article>
-
-    </div><!-- /.reviews__grid -->
-  </div><!-- /.reviews__container -->
-</section>
-
-<!-- ===== CONTACT SECTION ===== -->
-<!-- Вставити після секції reviews, перед footer -->
-
-<section class="contact" id="contact">
-  <div class="contact__container">
-
-    <!-- Заголовок -->
-    <div class="contact__header">
-      <span class="contact__eyebrow">// <span data-i18n="contact.eyebrow">ЗВ'ЯЗОК</span></span>
-      <h2 class="contact__title" data-i18n="contact.title">ЗАПИСАТИСЬ НА ПРОБНЕ</h2>
-      <div class="contact__divider"></div>
-      <p class="contact__subtitle" data-i18n="contact.subtitle">Перше заняття — безкоштовно</p>
-    </div>
-
-    <!-- Двоколонковий лейаут -->
-    <div class="contact__body">
-
-      <!-- Ліва колонка: контакти + карта -->
-      <div class="contact__info">
-
-        <ul class="contact__details">
-          <li class="contact__detail">
-            <span class="contact__detail-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </span>
-            <span data-i18n="contact.address">вул. Героїв РаКдіну, 1/8, Київ</span>
-          </li>
-          <li class="contact__detail">
-            <span class="contact__detail-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-              </svg>
-            </span>
-            <a href="tel:+380 11 111 11 11" data-i18n="contact.phone">+380 11 111 11 11</a>
-          </li>
-          <li class="contact__detail">
-            <span class="contact__detail-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </span>
-            <a href="mailto:info@ironforce.ua" data-i18n="contact.email">info@ironforce.ua</a>
-          </li>
-          <li class="contact__detail">
-            <span class="contact__detail-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </span>
-            <span data-i18n="contact.hours">Пн–Нд: 06:00 – 23:00</span>
-          </li>
-        </ul>
-
-        <!-- Карта-заглушка (можна замінити на iframe Google Maps) -->
-        <div class="contact__map" aria-label="Карта розташування">
-          <div class="contact__map-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-        </div>
-
-      </div><!-- /.contact__info -->
-
-      <!-- Права колонка: форма -->
-      <form class="contact__form" id="contact-form" novalidate>
-
-        <div class="contact__field">
-          <input
-            class="contact__input"
-            type="text"
-            name="name"
-            id="contact-name"
-            placeholder=" "
-            autocomplete="given-name"
-            required
-          />
-          <label class="contact__label" for="contact-name" data-i18n="contact.form.name">Ім'я</label>
-        </div>
-
-        <div class="contact__field">
-          <input
-            class="contact__input"
-            type="tel"
-            name="phone"
-            id="contact-phone"
-            placeholder=" "
-            autocomplete="tel"
-            required
-          />
-          <label class="contact__label" for="contact-phone" data-i18n="contact.form.phone">Номер телефону</label>
-        </div>
-
-        <div class="contact__field">
-          <input
-            class="contact__input"
-            type="email"
-            name="email"
-            id="contact-email"
-            placeholder=" "
-            autocomplete="email"
-          />
-          <label class="contact__label" for="contact-email" data-i18n="contact.form.email">Email</label>
-        </div>
-
-        <!-- Програма — випадаючий список -->
-        <div class="contact__field contact__field--select">
-          <select class="contact__select" name="program" id="contact-program" required>
-            <option value="" disabled selected hidden></option>
-            <option value="personal"   data-i18n="contact.form.prog.personal">Персональні тренування</option>
-            <option value="strength"   data-i18n="contact.form.prog.strength">Силові програми</option>
-            <option value="cardio"     data-i18n="contact.form.prog.cardio">Кардіо та витривалість</option>
-            <option value="group"      data-i18n="contact.form.prog.group">Групові заняття</option>
-            <option value="functional" data-i18n="contact.form.prog.functional">Функціональний тренінг</option>
-          </select>
-          <label class="contact__label" for="contact-program" data-i18n="contact.form.program">Програма</label>
-          <span class="contact__select-arrow" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </span>
-        </div>
-
-        <!-- Зручний час — випадаючий список -->
-        <div class="contact__field contact__field--select">
-          <select class="contact__select" name="time" id="contact-time" required>
-            <option value="" disabled selected hidden></option>
-            <option value="morning"   data-i18n="contact.form.time.morning">Ранок (06:00 – 12:00)</option>
-            <option value="afternoon" data-i18n="contact.form.time.afternoon">День (12:00 – 17:00)</option>
-            <option value="evening"   data-i18n="contact.form.time.evening">Вечір (17:00 – 23:00)</option>
-          </select>
-          <label class="contact__label" for="contact-time" data-i18n="contact.form.time">Зручний час</label>
-          <span class="contact__select-arrow" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </span>
-        </div>
-
-        <button class="contact__submit" type="submit" data-i18n="contact.form.submit">
-          НАДІСЛАТИ ЗАЯВКУ
-        </button>
-
-      </form><!-- /.contact__form -->
-
-    </div><!-- /.contact__body -->
-  </div><!-- /.contact__container -->
-</section>
+      </div>
+    </section>
 
   </main>
+
   <footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
+    <div class="container">
+      <div class="footer__inner">
 
-      <div class="footer__brand">
-        <a class="footer__logo" href="#">PEAKFIT</a>
-        <p class="footer__slogan" data-i18n="footer.slogan">Strength. Discipline. Results.</p>
+        <div class="footer__brand">
+          <a class="footer__logo" href="#">PEAKFIT</a>
+          <p class="footer__slogan" data-i18n="footer.slogan">Strength. Discipline. Results.</p>
+        </div>
+
+        <nav class="footer__nav">
+          <a class="footer__link" href="#services" data-i18n="nav.services">SERVICES</a>
+          <a class="footer__link" href="#trainers" data-i18n="nav.trainers">TRAINERS</a>
+          <a class="footer__link" href="#pricing" data-i18n="nav.pricing">PRICING</a>
+          <a class="footer__link" href="#reviews" data-i18n="nav.reviews">REVIEWS</a>
+          <a class="footer__link" href="#contact" data-i18n="nav.contact">CONTACT</a>
+        </nav>
+
+        <div class="footer__socials">
+          <a class="footer__social-link" href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="5" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a class="footer__social-link" href="#" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 011-1h3z" />
+            </svg>
+          </a>
+          <a class="footer__social-link" href="#" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" />
+            </svg>
+          </a>
+        </div>
+
       </div>
 
-      <nav class="footer__nav">
-        <a class="footer__link" href="#services" data-i18n="nav.services">SERVICES</a>
-        <a class="footer__link" href="#trainers" data-i18n="nav.trainers">TRAINERS</a>
-        <a class="footer__link" href="#pricing" data-i18n="nav.pricing">PRICING</a>
-        <a class="footer__link" href="#reviews" data-i18n="nav.reviews">REVIEWS</a>
-        <a class="footer__link" href="#contact" data-i18n="nav.contact">CONTACT</a>
-      </nav>
-
-      <div class="footer__socials">
-        <a class="footer__social-link" href="#" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <circle cx="12" cy="12" r="5"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
-        <a class="footer__social-link" href="#" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 011-1h3z"/>
-          </svg>
-        </a>
-        <a class="footer__social-link" href="#" aria-label="TikTok">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/>
-          </svg>
-        </a>
+      <div class="footer__bottom">
+        <p class="footer__copy" data-i18n="footer.copy">© 2026 PEAKFIT. All rights reserved.</p>
       </div>
-
     </div>
+  </footer>
+</body>
 
-    <div class="footer__bottom">
-      <p class="footer__copy" data-i18n="footer.copy">© 2026 PEAKFIT. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-  </body>
-  </body>
 </html>

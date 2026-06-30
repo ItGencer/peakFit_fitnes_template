@@ -6,6 +6,14 @@ import "./styles/pricing.scss";
 import "./styles/reviews.scss";
 import "./styles/contact.scss";
 
+// ─── Зображення (Webpack обробляє через asset/resource) ───────────
+import trainer1 from "./assets/trainer_1.jpg";
+import trainer2 from "./assets/trainer_2.jpg";
+import trainer3 from "./assets/trainer_3.jpg";
+import client1 from "./assets/client_1.jpg";
+import client2 from "./assets/client_2.jpg";
+import client3 from "./assets/client_3.jpg";
+
 // ─── Елементи ─────────────────────────────────────────────────────
 const burger      = document.getElementById("burger");
 const nav         = document.getElementById("nav");
@@ -59,8 +67,26 @@ document.querySelectorAll(".header__nav-link").forEach(link => {
   });
 });
 
+// ─── Зображення: підстановка реальних (хешованих) шляхів ──────────
+function setImageSources() {
+  const map = {
+    "trainer_1.jpg": trainer1,
+    "trainer_2.jpg": trainer2,
+    "trainer_3.jpg": trainer3,
+    "client_1.jpg": client1,
+    "client_2.jpg": client2,
+    "client_3.jpg": client3,
+  };
+
+  document.querySelectorAll("img[data-src]").forEach((img) => {
+    const key = img.dataset.src;
+    if (map[key]) img.src = map[key];
+  });
+}
+
 // ─── Ініціалізація після завантаження DOM ─────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  setImageSources();
   initHeroDivider();
   initSelectLabels();
 });
